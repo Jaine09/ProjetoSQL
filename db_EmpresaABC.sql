@@ -52,3 +52,14 @@ select * from PRODUTOS where nome not like '%y%';
 -- 'MA'
 select * from PRODUTOS where nome like 'mo%' and tipo like '%ma%';
 
+-- 1. Escreva uma consulta que exiba os dados da tabela PRODUTOS na forma crescente 
+-- pelo campo NOME.
+select * from PRODUTOS order by nome asc;
+
+-- 2. Escreva uma consulta que exiba o NOME dos produtos ordenado de forma decrescente 
+-- e o VALOR de forma crescente. 
+select * from PRODUTOS order by nome desc, valor asc;
+
+-- 3. Escreva uma consulta que exiba os três produtos mais caros. 
+select * from produtos order by valor desc limit 3;
+
