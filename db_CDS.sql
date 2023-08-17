@@ -149,7 +149,7 @@ insert into tbCategorias(cod_cat,nome_cat)values(4,'Rock Nacional');
 insert into tbEstados(sigla_est,nome_est)values('SP','São Paulo');
 insert into tbEstados(sigla_est,nome_est)values('MG','Minas Gerais');
 insert into tbEstados(sigla_est,nome_est)values('RJ','Rio de Janeiro');
-insert into tbEstados(sigla_est,nome_est)values('ES','Cachoeira do Itapemirim');
+insert into tbEstados(sigla_est,nome_est)values('ES','Espirito Santo');
 
 insert into tbCidades(cod_cid,sigla_est,nome_cid)values(1,'SP','São Paulo');
 insert into tbCidades(cod_cid,sigla_est,nome_cid)values(2,'SP','Sorocaba');
