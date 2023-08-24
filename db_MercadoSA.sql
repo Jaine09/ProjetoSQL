@@ -78,7 +78,7 @@ insert into tbProdutos(descricao,dataEntrada,horaEntrada,quantidade,valorUnit,co
 insert into tbProdutos(descricao,dataEntrada,horaEntrada,quantidade,valorUnit,codForn)values('abacaxi','2023/08/07','15:00:53',80,7.00,1);
 insert into tbVendas(codUsu,codCli,codProd,dataVenda,quantidade,valorTotal)values(1,1,2,'2023/08/10',10,50.00);
 insert into tbVendas(codUsu,codCli,codProd,dataVenda,quantidade,valorTotal)values(1,2,1,'2023/08/10',20,30.00);
-insert into tbVendas(codUsu,codCli,codProd,dataVenda,quantidade,valorTotal)values(1,2,1,'2023/08/10',10,30.00);
+insert into tbVendas(codUsu,codCli,codProd,dataVenda,quantidade,valorTotal)values(1,2,1,'2023/08/10',10,15.00);
 
 select * from tbFuncionarios;
 select * from tbCliente;
@@ -86,3 +86,71 @@ select * from tbFornecedores;
 select * from tbUsuarios;
 select * from tbProdutos;
 select * from tbVendas;
+
+-- inner join (associar tabelas)
+select usu.nome as 'Nome do usuário', 
+func.nome as 'Nome do funcionário', 
+func.email as 'E-mail do funcionário'
+from tbUsuarios as usu 
+inner join tbFuncionarios as func
+on usu.codFunc = func.codFunc;
+
+select forn.nome,forn.cnpj,prod.descricao 
+from tbProdutos as prod 
+inner join tbFornecedores as forn
+on prod.codForn = forn.codForn;
+
+-- perguntar para  vendas: tabela cliente o nome do cliente,email e telefone e da tabela vendas a dataVenda e o valorTotal 
+select cli.nome,cli.email,cli.telCel,vend.dataVenda,vend.valorTotal 
+from tbVendas as vend
+inner join tbCliente as cli 
+on vend.codCli = cli.codCli;
+
+-- Associando com mais de uma tabela
+select cli.nome,cli.email,prod.descricao,vend.dataVenda
+from tbVendas as vend 
+inner join tbCliente as cli 
+on vend.codCli = cli.codCli
+inner join tbProdutos as prod 
+on vend.codProd = prod.codProd
+where codVenda = 1;
+
+-- pesquisando através do filtro like
+select cli.nome,cli.email,prod.descricao,vend.dataVenda
+from tbVendas as vend 
+inner join tbCliente as cli 
+on vend.codCli = cli.codCli
+inner join tbProdutos as prod 
+on vend.codProd = prod.codProd
+where prod.descricao like '%b%';
+
+select distinct usu.nome as 'Nome do usuário', func.nome 'Nome do funcionário', 
+vend.dataVenda, vend.quantidade, vend.valorTotal
+from tbUsuarios as usu 
+inner join tbFuncionarios as func
+on usu.codFunc = func.codFunc
+inner join tbVendas as vend 
+on usu.codUsu = vend.codUsu;
+
+select cli.nome as 'Nome cliente', vend.dataVenda, 
+prod.descricao, forn.nome as 'Nome fornecedor' 
+from tbCliente as cli 
+inner join tbVendas as vend 
+on cli.codCli = vend.codCli
+inner join tbProdutos as prod 
+on vend.codProd = prod.codProd
+inner join tbFornecedores as forn 
+on prod.codForn = forn.codForn;
+
+select func.nome as 'Nome do funcionário', usu.nome as 'Nome usuário', vend.dataVenda as 'Data venda', 
+vend.valorTotal as 'Valor total', prod.descricao as 'Descrição', 
+prod.dataEntrada as 'Data de entrada', forn.nome as 'Nome fornecedor', forn.cnpj as 'cnpj do fornecedor'
+from tbFuncionarios as func 
+inner join tbUsuarios as usu 
+on func.codFunc = usu.codFunc
+inner join tbVendas as vend 
+on usu.codUsu = vend.codUsu
+inner join tbProdutos as prod 
+on vend.codProd = prod.codProd
+inner join tbFornecedores as forn 
+on prod.codForn = forn.codForn;

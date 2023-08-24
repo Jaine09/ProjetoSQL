@@ -205,3 +205,17 @@ update tbItens_Da_Venda set subtotal = subtotal * 0.50 where subtotal > 200;
 select * from tbItens_Da_Venda order by id_Venda asc;
 
 -- deletando
+
+delete tbGeneros where descricao = '-18';
+delete tbItens_Da_Venda where qtd < 50;
+delete tbAutores where nome = 'Pedro';
+delete tbLivros where titulo = 'A culpa é das estrelas';
+delete tbEscreve where id_Autor = 9;
+
+-- select 
+
+select * from tbGeneros where descricao not in('Romance', 'Terror');
+select * from tbAutores where nome like '%y';
+
+
+
