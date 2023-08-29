@@ -283,7 +283,7 @@ left join tbClientes as cli on ped.cod_cli = cli.cod_cli;
 -- funcionário. 
 
 select func.nome_func as 'Funcionário', nome_dep as 'Dependente' from tbFuncionarios as func 
-inner join tbDependentes as dep on func.cod_func = dep.cod_func;
+left join tbDependentes as dep on func.cod_func = dep.cod_func;
 
 -- 7. Selecione o nome dos clientes e o nome dos cônjuges de cada cliente. 
 
