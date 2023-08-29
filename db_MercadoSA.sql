@@ -154,3 +154,14 @@ inner join tbProdutos as prod
 on vend.codProd = prod.codProd
 inner join tbFornecedores as forn 
 on prod.codForn = forn.codForn;
+
+-- perguntar para tabela funcionarios quais os produtos cadastrados
+
+select prod.descricao, prod.quantidade from tbFuncionarios as func 
+left join tbProdutos as prod on func.codFunc = prod.codProd;
+
+select prod.descricao, prod.quantidade from tbFuncionarios as func 
+right join tbProdutos as prod on func.codFunc = prod.codProd;
+
+select prod.descricao, prod.quantidade from tbFuncionarios as func 
+inner join tbProdutos as prod on func.codFunc = prod.codProd;

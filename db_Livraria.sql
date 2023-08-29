@@ -206,7 +206,7 @@ select * from tbItens_Da_Venda order by id_Venda asc;
 
 -- deletando
 
-delete tbGeneros where descricao = '-18';
+delete tbGeneros where descricao = 'Espiritual';
 delete tbItens_Da_Venda where qtd < 50;
 delete tbAutores where nome = 'Pedro';
 delete tbLivros where titulo = 'A culpa é das estrelas';
@@ -216,6 +216,7 @@ delete tbEscreve where id_Autor = 9;
 
 select * from tbGeneros where descricao not in('Romance', 'Terror');
 select * from tbAutores where nome like '%y';
-
+select * from tbVenda where total between 50.00 and 100.00;
+select * from tbGeneros where descricao as 'Terror';
 
 
