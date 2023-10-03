@@ -19,4 +19,4 @@ cidade varchar(100),
 primary key (codFunc)
 );
 
--- insert into tbFuncionarios(nome,email,cpf,dNasc,endereco,cep,numero,bairro,estado,cidade)values();
+insert into tbFuncionarios(nome,email,cpf,dNasc,endereco,cep,numero,bairro,estado,cidade)values();
