@@ -301,5 +301,5 @@ select cli.nome_cli as 'Nome do Cliente', conj.nome_conj as 'Nome do Conjugê' f
 select cli.nome_cli as 'Nome do Cliente', conj.nome_conj as 'Nome do Conjugê', ped.num_ped as 'Número do Pedido', ped.val_ped as 'Valor do Pedido', func.cod_func as 'Código fo Funcionário' from tbClientes as cli
 left join tbConjuge as conj on cli.cod_cli = conj.cod_cli 
 left join tbPedidos as ped on cli.cod_cli = ped.cod_cli 
-left join tbFuncionarios as func on ped.cod_func = func.cod_func; 
+left join tbFuncionarios as func on ped.cod_func = func.cod_func;         
 
