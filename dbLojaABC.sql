@@ -1,4 +1,4 @@
--- drop database dbLojaAbC;
+drop database dbLojaAbC;
 
 create database dbLojaAbC;
 
@@ -19,4 +19,16 @@ cidade varchar(100),
 primary key (codFunc)
 );
 
-insert into tbFuncionarios(nome,email,cpf,dNasc,endereco,cep,numero,bairro,estado,cidade)values();
+-- insert into tbFuncionarios(nome,email,cpf,dNasc,endereco,cep,numero,bairro,estado,cidade)values();
+
+-- Buscar por código
+select * from tbFuncionarios where codFunc = 1;
+
+-- Buscar por nome
+select * from tbFuncionarios where nome like '%a%';
+
+-- Inserir um campo de código não existente
+select codFunc+1 from tbFuncionarios order by codFunc desc;
+
+-- Buscar funcionário
+select * from tbFuncionarios where nome = "@nome";
