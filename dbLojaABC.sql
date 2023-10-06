@@ -19,6 +19,18 @@ cidade varchar(100),
 primary key (codFunc)
 );
 
+create table tbUsuarios(
+codUsu int not null auto_increment,
+usuario varchar(30) not null,
+senha varchar(10) not null,
+codFunc int not null,
+primary key(codUsu),
+foreign key(codFunc) references tbFuncionarios(codFunc));
+
+insert into tbUsuarios(usuario,senha,codFunc)values('admin','admin',1);
+
+select * from tbUsuarios where usuario = 'admin' and senha = 'admin';
+
 -- insert into tbFuncionarios(nome,email,cpf,dNasc,endereco,cep,numero,bairro,estado,cidade)values();
 
 -- Buscar por código
@@ -38,3 +50,4 @@ update tbFuncionarios set nome = @nome, email = @email, cpf = @cpf, dNasc = @dNa
 
 --Excluindo Funcionário
 delete from tbFuncionarios where codFunc = @codFunc;
+
