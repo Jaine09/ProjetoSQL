@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/10/2023 às 22:09
+-- Tempo de geração: 06/10/2023 às 21:01
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -46,10 +46,11 @@ CREATE TABLE `tbfuncionarios` (
 --
 
 INSERT INTO `tbfuncionarios` (`codFunc`, `nome`, `email`, `cpf`, `dNasc`, `endereco`, `cep`, `numero`, `bairro`, `estado`, `cidade`) VALUES
-(1, 'Paula Fernanda', 'PaulaFer@gmail.com', '458.966.273-48', '2000-07-18', 'Rua Amador Bueno', 'System.Wi', 'System.Win', 'Santo Amaro', 'SP', 'São Paulo'),
-(2, 'Adriana Lima', 'Adrima@outlook.com', '528.967.431-89', '2001-03-22', 'Rua Doutor Felipe Cabral de Vasconcellos', 'System.Wi', 'System.Win', 'Morro do Índio', 'SP', 'São Paulo'),
-(3, 'Alan Fonseca de Santana', 'alfsantana@gmail.com', '087.458.932-10', '2005-11-08', 'Rua Puruba', 'System.Wi', 'System.Win', 'Cidade Ipava', 'SP', 'São Paulo'),
-(4, 'Mariana Silva', 'MariaS@hotmail.com', '134.576.320-86', '2010-07-13', 'Rua Doutor Felipe Cabral de Vasconcellos', 'System.Wi', 'System.Win', 'Morro do Índio', 'SP', 'São Paulo');
+(1, 'Jaine Jesus Costa', 'JaineJCosta@gmail.com', '123.456.789-09', '2003-05-13', 'Rua Doutor Felipe Cabral de Vasconcellos', '05873-210', '4', 'Morro do Índio', 'SP', 'São Paulo'),
+(2, 'Fernanda Lima', 'FernandaLima@gmail.com', '098.765.432-21', '2000-02-04', 'Rua Doutor Felipe Cabral de Vasconcellos', '05873-210', '6', 'Morro do Índio', 'SP', 'São Paulo'),
+(3, 'Felipe Miranda de Jesus', 'FelipeMiranda@hotmail.com', '865.940.253-85', '2000-02-04', 'Rua Doutor Felipe Cabral de Vasconcellos', '05873-210', '78', 'Morro do Índio', 'SP', 'São Paulo'),
+(4, 'Rosana Freitas', 'RosanaFreitas@outlook.com', '678.953.098-21', '2000-08-04', 'Rua Doutor Felipe Cabral de Vasconcellos', '05873-210', '9', 'Morro do Índio', 'SP', 'São Paulo'),
+(5, 'Giovana Silva dos Santos', 'GioSantos@gmail.com', '765.093.210-98', '2009-07-13', 'Rua Doutor Felipe Cabral de Vasconcellos', '05873-210', '55', 'Morro do Índio', 'SP', 'São Paulo');
 
 --
 -- Índices para tabelas despejadas
@@ -70,7 +71,7 @@ ALTER TABLE `tbfuncionarios`
 -- AUTO_INCREMENT de tabela `tbfuncionarios`
 --
 ALTER TABLE `tbfuncionarios`
-  MODIFY `codFunc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codFunc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
