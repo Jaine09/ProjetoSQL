@@ -31,6 +31,10 @@ insert into tbUsuarios(usuario,senha,codFunc)values('admin','admin',1);
 
 select usu.usuario, usu.senha, func.codFunc from tbFuncionarios as func inner join tbUsuarios as usu on func.codFunc = usu.codFunc where func.nome = 'Giovana Silva dos Santos';
 
+-- Alterar usuários
+-- update into tbUsuarios set usuario = @usuario, senha = @senha where codUsu = @codUsu;
+
+select codFunc from tbFuncionarios where nome = @nome;
 
 select nome from tbFuncionarios order by nome asc;
 
