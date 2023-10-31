@@ -9,6 +9,27 @@ senha varchar(10) not null,
 primary key(codUsu)
 );
 
+create table tbFuncionarios(
+codFunc int not null auto_increment,
+nomeFunc varchar(100),
+email varchar(100),
+cpf char(14) unique,
+dNasc date,
+primary key (codFunc)
+);
+
+create table tbComissao(
+codComissao int not null auto_increment,
+codFunc int not null,
+nomeCliente varchar(100),
+valorCompra decimal(9,2),
+qualidade char(10),
+valoComissao decimal(9,2),
+valorTotal decimal(9,2),
+primary key(codComissao),
+foreign key(codFunc) references tbFuncionarios(codFunc)
+);
+
 create table tbProdutos(
 codProd int not null auto_increment,
 nomeProd varchar(100) not null,
@@ -29,7 +50,13 @@ foreign key(codUsu) references tbLogin(codUsu)
 -- select codProd+1 from tbProdutos order by desc;
 
 -- puxar código do usuário
-select codUsu from tbLogin;
+-- select codUsu from tbLogin;
 
 -- update
-update tbProdutos set nomeProd = @nomeProd, marcaProd = @marcaProd, quantidade = @quantidade, tamanho = @tamanho, dataRepo = @dataRepo, preco = @preco where codUsu = @codUsu;
+-- update tbProdutos set nomeProd = @nomeProd, marcaProd = @marcaProd, quantidade = @quantidade, tamanho = @tamanho, dataRepo = @dataRepo, preco = @preco where codUsu = @codUsu;
+
+-- pesquisa por codigo
+-- select nomeProd from tbProdutos where codProd = @codProd;
+
+-- pesquisa por marca
+-- select nomeProd from tbProdutos where marcaProd = @marcaProd;
