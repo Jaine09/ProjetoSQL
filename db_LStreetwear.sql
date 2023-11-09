@@ -19,14 +19,15 @@ primary key (codFunc)
 );
 
 create table tbComissao(
-codComissao int not null auto_increment,
+codCompra int not null auto_increment,
 codFunc int not null,
 nomeCliente varchar(100),
+dataCompra date,
 valorCompra decimal(9,2),
 qualidade char(10),
-valoComissao decimal(9,2),
+valorComissao decimal(9,2),
 valorTotal decimal(9,2),
-primary key(codComissao),
+primary key(codCompra),
 foreign key(codFunc) references tbFuncionarios(codFunc)
 );
 
@@ -47,6 +48,8 @@ foreign key(codUsu) references tbLogin(codUsu)
 
 -- insert into tbLogin(codUsu,usuario,senha)values(1,'admin','admin');
 
+--insert into tbFuncionarios(nomeFunc,email,cpf,dNasc)values("Firmio da Silva","FifiSilv@gmail.com","287.906.543-09","1998/07/29");
+
 -- select codProd+1 from tbProdutos order by desc;
 
 -- puxar código do usuário
@@ -60,3 +63,5 @@ foreign key(codUsu) references tbLogin(codUsu)
 
 -- pesquisa por marca
 -- select nomeProd from tbProdutos where marcaProd = @marcaProd;
+
+--insert into tbComissao(codFunc,nomeCliente,dataCompra,valorCompra,qualidade,valorComissao,valorTotal)values(@codFunc,@nomeCliente,@dataCompra,@valorCompra,@qualidade,@valorComissao,@valorTotal);
